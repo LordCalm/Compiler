@@ -1,0 +1,3 @@
+PUSH 7
+PUSH 8
+SUM
