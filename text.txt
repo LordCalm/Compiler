@@ -1,3 +1,6 @@
 PUSH 7
+JMP:end
 PUSH 8
-SUM
+end:
+MUL
+OUT;hlbhb;bububibibb
