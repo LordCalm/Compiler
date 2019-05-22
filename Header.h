@@ -145,7 +145,15 @@ void convertization(vector<string> & tokens, vector<string> & labels, vector<con
 			converted.push_back({ type_table["arg"], atoi(i.c_str()) });
 		}
 		else if (IsRegister(i)) {
-			converted.push_back({ type_table["reg"], reg_table["ax"] });
+			if (i == "ax")
+				converted.push_back({ type_table["reg"], reg_table["ax"] });
+			else if (i == "bx")
+				converted.push_back({ type_table["reg"], reg_table["bx"] });
+			else if (i == "cx")
+				converted.push_back({ type_table["reg"], reg_table["cx"] });
+			else if (i == "dx")
+				converted.push_back({ type_table["reg"], reg_table["dx"] });
+
 		}
 		else if (i[0] == 'J') {
 			try { corellate_labels(i, labels, converted, l_begin); }
@@ -211,11 +219,7 @@ void logic(vector<convert> & converted, vector<command> & command)
 			else if ((*it).cell == func_table["POP"]) {
 				try { it++; }
 				catch (...) { throw; }
-				if ((*it).type == type_table["arg"]) {
-					command.push_back({ (*(it - 1)).cell, arg_type_table["num"], (*it).cell });
-					count++;
-				}
-				else if ((*it).type == type_table["reg"]) {
+				if ((*it).type == type_table["reg"]) {
 					command.push_back({ (*(it - 1)).cell, arg_type_table["reg"], (*it).cell });
 					count++;
 				}
@@ -234,7 +238,7 @@ void logic(vector<convert> & converted, vector<command> & command)
 				throw logic_error("Unknown function");
 		}
 		else if ((*it).type == type_table["label"]) {
-			l_end[(*it).cell] = count + 2;
+			l_end[(*it).cell] = count;
 		}
 		else if (IsLabel((*it).type)) {
 			if (l_end.find((*it).cell) != l_end.end()) {

@@ -1,4 +1,6 @@
-﻿  Source.cpp
-c:\users\дмитрий\source\repos\compiler\source.cpp(26): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\дмитрий\source\repos\compiler\source.cpp(56): warning C4018: <: несоответствие типов со знаком и без знака
+﻿  Main.cpp
+C:\Users\Дмитрий\source\repos\Compiler\Header.h(35): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Дмитрий\source\repos\Compiler\Header.h(125): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Дмитрий\source\repos\Compiler\Header.h(128): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Дмитрий\source\repos\Compiler\Header.h(164): warning C4018: <: несоответствие типов со знаком и без знака
   Compiler.vcxproj -> C:\Users\Дмитрий\source\repos\Debug\Compiler.exe
